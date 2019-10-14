@@ -15,11 +15,11 @@ class MovieController {
     let firebaseURL = URL(string: "https://sprintmovies.firebaseio.com/")!
     typealias CompletionHandler = (Error?) -> Void
     
-//   init() {
-//       fetchMoviesFromServer() { _ in
-//           print("Fetching tasks from the server")
-//       }
-//   }
+   init() {
+       fetchMoviesFromServer() { _ in
+           print("Fetching tasks from the server")
+       }
+   }
     
     
     func saveToPersistenceStore(){
