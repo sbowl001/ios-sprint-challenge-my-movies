@@ -34,15 +34,16 @@ class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as? MoviesSearchedTableViewCell else {return UITableViewCell()}
         
-        cell.textLabel?.text = movieController.searchedMovies[indexPath.row].title
-        
+    
+//        cell.textLabel?.text = movieController.searchedMovies[indexPath.row].title
+        cell.titleLabel.text = movieController.searchedMovies[indexPath.row].title
+        cell.movieController = movieController
         return cell
     }
     
-    @IBAction func addMovieTapped(_ sender: Any) {
-    }
+   
     var movieController = MovieController()
     
     @IBOutlet weak var searchBar: UISearchBar!

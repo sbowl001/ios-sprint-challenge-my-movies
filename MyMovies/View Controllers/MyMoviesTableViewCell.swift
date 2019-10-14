@@ -14,6 +14,23 @@ class MyMoviesTableViewCell: UITableViewCell {
     @IBOutlet weak var hasWatchedButton: UIButton!
    
 
+    var movieController: MovieController?
+    var movie: Movie? {
+        didSet {
+            print("movie was set")
+            updateViews()
+        }
+    }
     @IBAction func watchedButtonTapped(_ sender: Any) {
+        guard let movie = movie else {return}
+        movieController?.toggle(movie: movie)
+         hasWatchedButton.setTitle(movie.hasWatched ?  "Watched" : "Not Watched", for: .normal)
+    }
+    
+    private func updateViews() {
+        guard let movie = movie else { return}
+        titleLabel.text = movie.title
+        
+        hasWatchedButton.setTitle(movie.hasWatched ?  "Watched" : "Not Watched", for: .normal)
     }
 }

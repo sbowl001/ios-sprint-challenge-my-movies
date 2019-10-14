@@ -12,14 +12,14 @@ import CoreData
 class MovieController {
     
    //MARK: FIREBASE
-    let firebaseURL = URL(string: "https://tasks-3f211.firebaseio.com/")!
+    let firebaseURL = URL(string: "https://sprintmovies.firebaseio.com/")!
     typealias CompletionHandler = (Error?) -> Void
     
-   init() {
-       fetchMoviesFromServer() { _ in
-           print("Fetching tasks from the server")
-       }
-   }
+//   init() {
+//       fetchMoviesFromServer() { _ in
+//           print("Fetching tasks from the server")
+//       }
+//   }
     
     
     func saveToPersistenceStore(){
@@ -45,7 +45,7 @@ class MovieController {
     
     func deleteMovie(movie: Movie) {
         CoreDataStack.shared.mainContext.delete(movie)
-        delete(movie: movie)
+        deleteTaskFromServer(movie, completion: {_ in})
         saveToPersistenceStore()
     }
     

@@ -39,46 +39,57 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="67" id="d7W-qE-xfL">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="67" id="d7W-qE-xfL" customClass="MoviesSearchedTableViewCell" customModule="MyMovies" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="67"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d7W-qE-xfL" id="8Bc-u1-IMl">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dws-Qp-SId">
-                                            <rect key="frame" x="16" y="13.5" width="343" height="40"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFA-Ut-gLt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="780" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG6-Fs-ain">
-                                                    <rect key="frame" x="0.0" y="0.0" width="227" height="40"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygO-ML-zyL">
-                                                    <rect key="frame" x="243" y="0.0" width="100" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="6BK-Pz-QlD"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Add Movie"/>
-                                                    <connections>
-                                                        <action selector="addMovieTapped:" destination="YE2-Zi-kUT" eventType="touchUpInside" id="qXV-U1-z00"/>
-                                                    </connections>
-                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dws-Qp-SId">
+                                                    <rect key="frame" x="8" y="5" width="359" height="57"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="780" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG6-Fs-ain">
+                                                            <rect key="frame" x="0.0" y="0.0" width="243" height="57"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygO-ML-zyL">
+                                                            <rect key="frame" x="259" y="0.0" width="100" height="57"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="6BK-Pz-QlD"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Add Movie"/>
+                                                            <connections>
+                                                                <action selector="addMovieTapped:" destination="d7W-qE-xfL" eventType="touchUpInside" id="dqJ-iM-jPj"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="343" id="Hts-zw-iMS"/>
-                                                <constraint firstAttribute="height" constant="30" id="bvX-BY-ub7"/>
+                                                <constraint firstItem="dws-Qp-SId" firstAttribute="leading" secondItem="MFA-Ut-gLt" secondAttribute="leading" constant="8" id="87Q-EU-YZh"/>
+                                                <constraint firstAttribute="trailing" secondItem="dws-Qp-SId" secondAttribute="trailing" constant="8" id="R6a-aw-QY6"/>
+                                                <constraint firstItem="dws-Qp-SId" firstAttribute="top" secondItem="MFA-Ut-gLt" secondAttribute="top" constant="5" id="sTQ-UG-UoW"/>
+                                                <constraint firstAttribute="bottom" secondItem="dws-Qp-SId" secondAttribute="bottom" constant="5" id="wTT-yq-RTG"/>
                                             </constraints>
-                                        </stackView>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="dws-Qp-SId" firstAttribute="top" secondItem="8Bc-u1-IMl" secondAttribute="topMargin" constant="2.5" id="FGa-x5-omU"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="dws-Qp-SId" secondAttribute="bottom" constant="2.5" id="N5c-yG-NnW"/>
-                                        <constraint firstAttribute="trailing" secondItem="dws-Qp-SId" secondAttribute="trailing" constant="16" id="YEE-Yi-cwu"/>
-                                        <constraint firstItem="dws-Qp-SId" firstAttribute="leading" secondItem="8Bc-u1-IMl" secondAttribute="leading" constant="16" id="n2J-bv-XHf"/>
+                                        <constraint firstItem="MFA-Ut-gLt" firstAttribute="leading" secondItem="8Bc-u1-IMl" secondAttribute="leading" id="1fD-0D-7sa"/>
+                                        <constraint firstItem="MFA-Ut-gLt" firstAttribute="top" secondItem="8Bc-u1-IMl" secondAttribute="top" id="CZR-Hh-0cj"/>
+                                        <constraint firstAttribute="bottom" secondItem="MFA-Ut-gLt" secondAttribute="bottom" id="ceT-Hg-lvo"/>
+                                        <constraint firstAttribute="trailing" secondItem="MFA-Ut-gLt" secondAttribute="trailing" id="qbE-Fb-uqe"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="titleLabel" destination="vG6-Fs-ain" id="KSf-2Y-p6b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
