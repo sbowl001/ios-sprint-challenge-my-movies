@@ -92,4 +92,9 @@ class MyMoviesTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func watchedButtonTapped(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var hasWatchedButton: UIButton!
+    @IBOutlet weak var tittleLabel: UILabel!
 }

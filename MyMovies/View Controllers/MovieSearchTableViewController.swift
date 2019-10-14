@@ -41,7 +41,11 @@ class MovieSearchTableViewController: UITableViewController, UISearchBarDelegate
         return cell
     }
     
+    @IBAction func addMovieTapped(_ sender: Any) {
+    }
     var movieController = MovieController()
     
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    
 }

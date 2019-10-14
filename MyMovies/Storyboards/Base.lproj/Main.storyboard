@@ -49,18 +49,21 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dws-Qp-SId">
                                             <rect key="frame" x="16" y="13.5" width="343" height="40"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG6-Fs-ain">
-                                                    <rect key="frame" x="0.0" y="0.0" width="281" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="281" id="JSd-Zq-Tj1"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="780" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vG6-Fs-ain">
+                                                    <rect key="frame" x="0.0" y="0.0" width="227" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygO-ML-zyL">
-                                                    <rect key="frame" x="297" y="0.0" width="46" height="40"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <rect key="frame" x="243" y="0.0" width="100" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="6BK-Pz-QlD"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Add Movie"/>
+                                                    <connections>
+                                                        <action selector="addMovieTapped:" destination="YE2-Zi-kUT" eventType="touchUpInside" id="qXV-U1-z00"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -101,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyMovieCell" rowHeight="55" id="9cK-VO-zdo">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyMovieCell" rowHeight="55" id="9cK-VO-zdo" customClass="MyMoviesTableViewCell" customModule="MyMovies" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9cK-VO-zdo" id="F0q-Pd-Woa">
@@ -120,6 +123,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ay-OW-Mt0">
                                                     <rect key="frame" x="297" y="0.0" width="46" height="30"/>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="watchedButtonTapped:" destination="9cK-VO-zdo" eventType="touchUpInside" id="zcy-Nw-Jzo"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -132,6 +138,10 @@
                                 <constraints>
                                     <constraint firstItem="O4P-Iq-3DJ" firstAttribute="centerY" secondItem="9cK-VO-zdo" secondAttribute="centerY" id="HIg-WH-g9w"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="hasWatchedButton" destination="3Ay-OW-Mt0" id="xCa-Jd-6WC"/>
+                                    <outlet property="titleLabel" destination="a6O-zS-fmH" id="fEg-nA-6IV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
