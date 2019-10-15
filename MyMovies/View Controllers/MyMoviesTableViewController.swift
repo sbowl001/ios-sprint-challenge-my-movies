@@ -19,6 +19,14 @@ class MyMoviesTableViewController: UITableViewController, NSFetchedResultsContro
 
       
     }
+    
+    @IBAction func refresh(_ sender: Any) {
+        movieController.fetchMoviesFromServer { (_) in
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
+            }
+        }
+    }
 
   lazy var fetchedResultsController: NSFetchedResultsController<Movie> = {
          let fetchRequest: NSFetchRequest<Movie> = Movie.fetchRequest()

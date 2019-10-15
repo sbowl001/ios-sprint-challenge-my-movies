@@ -28,6 +28,7 @@ class MyMoviesTableViewCell: UITableViewCell {
     }
     
     private func updateViews() {
+        //do we put isViewloaded?
         guard let movie = movie else { return}
         titleLabel.text = movie.title
         
